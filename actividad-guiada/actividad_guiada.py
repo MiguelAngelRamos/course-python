@@ -19,11 +19,22 @@ inventario_frutas = {
         "precio": 2.80,
         "stock": 60,
         "unidad": "kg"
+    },
+    "uva": {
+        "precio": 4.00,
+        "stock": 40,
+        "unidad": "kg"
+    },
+    "fresa": {
+        "precio": 5.00,
+        "stock": 30,
+        "unidad": "kg"
     }
 
 }
 
 # CONSTANTES DE DESCUENTOS
+DESCUESTO_MAYORISTA = 0.15 # 15% de descuento para compras mayores a 10kg
 UMBRAL_MAYORISTA = 10.0 # Cantidad minina para ser considerado mayorista
-IMPUESTO = 0.19 # Impuesto sobre las ventas (19%)
 DESCUENTO_PRIMERA_COMPRA = 0.10 # 10% para nuevos clientes
+IMPUESTO = 0.19 # Impuesto sobre las ventas (19%)
