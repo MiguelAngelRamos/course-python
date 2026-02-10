@@ -29,3 +29,34 @@ Tareas:
 - Mostrar el monto final a pagar
 
 """
+
+## Sistema de descuentos en tienda
+# Solicitar al usuario el monto de la compra
+monto_compra = float(input("Ingrese el monto de su compra: $"))
+# Solicitar el tipo de membresía
+tipo_membresia = input("Ingrese su tipo de membresía (Premium, Regular, Ninguna): ").strip().lower()
+
+# Calcular el descuento correspondiente
+descuento = 0
+
+if tipo_membresia == "premium":
+    if monto_compra > 1000:
+        descuento = 0.25
+        print("¡Eres un cliente Premium! Tienes un descuento del 25%.")
+    elif monto_compra >= 500 and monto_compra <= 1000:
+        descuento = 0.20
+    elif monto_compra < 500:
+        descuento = 0.15
+
+elif tipo_membresia == "regular":
+    if monto_compra > 1000:
+        descuento = 0.15
+    elif monto_compra >= 500 and monto_compra <= 1000:
+        descuento = 0.10
+    elif monto_compra < 500:
+        descuento = 0.05
+else: # No tiene membresía
+    if monto_compra > 1000:
+        descuento = 0.05
+    else:
+        descuento = 0
