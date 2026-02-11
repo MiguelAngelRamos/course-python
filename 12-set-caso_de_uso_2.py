@@ -16,5 +16,6 @@ lista_filtrada = []
             lista_filtrada.append(servidor)
     return lista_filtrada
 """
-
-print(filtrar_servidores_activos(servidores))
+if __name__ == "__main__":
+    servidores_operativos = filtrar_servidores_activos(servidores)
+    print("Servidores activos:", servidores_operativos)
