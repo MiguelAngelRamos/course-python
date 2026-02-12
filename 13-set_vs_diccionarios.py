@@ -22,3 +22,8 @@ colores_hex = {
     "verde": "#00FF00",
     "azul": "#0000FF"
 }
+
+# Acceso a elementos:
+
+mi_set = {10, 20, 30}
+print(mi_set[0])
