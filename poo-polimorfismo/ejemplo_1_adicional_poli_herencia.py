@@ -71,5 +71,6 @@ def demostrar_polimorfismo_con_tipos() -> None:
     equipo: list[Empleado] = [sofia, catalina, diego]
     procesar_nomina(equipo)
 
+
 if __name__ == "__main__":
     demostrar_polimorfismo_con_tipos()

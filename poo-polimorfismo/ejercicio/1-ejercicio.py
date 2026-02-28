@@ -32,11 +32,31 @@ class NotificacionEmail(CanalNotificacion):
         costo_adjunto: float = 0.10 if self.tiene_adjunto else 0.0
         return costo_base + costo_adjunto
 
+class NotificacionSMS(CanalNotificacion):
+    def __init__(self, destinatario:str, numero_telefono:str, num_mensajes:int) -> None:
+        super().__init__(nombre_canal="SMS", destinatario=destinatario)
+        # Atributos especificos de la clase NotificacionSMS
+        self.numero_telefono: str = numero_telefono
+        self.num_mensajes: int = num_mensajes
+
+    def enviar(self, mensaje: str) -> str:
+        return (f"Enviando SMS a {self.destinatario} ({self.numero_telefono}), Mensaje: {mensaje}")
+    
+    def calcular_costo(self) -> float:
+        tarifa_por_sms:float = 0.80
+        return self.num_mensajes * tarifa_por_sms
 
 def demostrar_polimorfismo_con_tipos() -> None:
     print("Demostración de Polimorfismo con Herencia")
     email_sofia: NotificacionEmail = NotificacionEmail(destinatario="Sofía", direccion_email="sofia@example.com", tiene_adjunto=True)
     demostrar_not_implement_error(email_sofia)
+
+    sms_catalina: NotificacionSMS = NotificacionSMS(destinatario="Catalina", numero_telefono="555-1234", num_mensajes=3)
+    demostrar_not_implement_error(sms_catalina)
+
+    # Aca podria llamar a la campana
+    canales: List[CanalNotificacion] = [email_sofia, sms_catalina]
+    ejecutar_campana(canales, "¡Hola! Esta es una notificación de prueba estamos aprendiendo polimorfismo en Python")
 
 def demostrar_not_implement_error(canal: CanalNotificacion) -> None:
     try:
@@ -44,6 +64,14 @@ def demostrar_not_implement_error(canal: CanalNotificacion) -> None:
         canal.calcular_costo()
     except NotImplementedError as e:
         print(f"Error: {e}")
+
+def ejecutar_campana(calanes: List[CanalNotificacion], mensaje: str)-> None:
+    print("Compana de Notificaciones - Polimorfismo en Acción")
+    for canal in calanes:
+        resultado_envio = canal.enviar(mensaje)
+        costo_envio = canal.calcular_costo()
+        print(f"{resultado_envio} | Costo: ${costo_envio:.2f}")
+
 
 if __name__ == "__main__":
     demostrar_polimorfismo_con_tipos()
