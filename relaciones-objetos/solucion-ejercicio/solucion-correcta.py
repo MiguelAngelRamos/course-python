@@ -18,6 +18,9 @@ class Libro:
     def get_titulo(self) -> str:
         return self.__titulo
     
+    def get_autor(self) -> str:
+        return self.__autor
+    
     # COMPOSICION
     def crear_y_agregar_capitulo(self, titulo_capitulo: str, numero_paginas: int) -> None:
         # el libro crea un capitulo que NO EXISTE de forma independiente, es aqui donde se establece la relacion de composicion entre el libro y el capitulo
@@ -52,6 +55,9 @@ class Lector:
         self.nombre = nombre
     
     # Colaboracion
+    # El lector no tiene una relacion de agregacion ni composicion con el libro, simplemente colabora con el libro al leerlo, el libro no forma parte del lector ni el lector forma parte del libro, ambos existen de forma independiente y pueden colaborar entre si sin que uno dependa del otro
+    # No hay persistencia de la relacion entre el lector y el libro, el lector puede leer cualquier libro sin necesidad de que el libro forme parte del lector o viceversa, simplemente colaboran entre si en el momento de la lectura
+
     def leer_libro(self, libro: Libro) -> None:
         print(f"{self.nombre} está leyendo '{libro.get_titulo()}' de {libro.get_autor()}")
         libro.mostrar_indice()
