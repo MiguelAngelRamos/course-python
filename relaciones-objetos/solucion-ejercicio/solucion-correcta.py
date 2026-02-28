@@ -66,4 +66,17 @@ class Lector:
 
 
 if __name__ == "__main__":
-    pass
+        # 1. Demostración de Composición
+    libro_arquitectura = Libro("Arquitectura Limpia", "Robert C. Martin")
+    libro_arquitectura.crear_y_agregar_capitulo("¿Qué es el diseño y la arquitectura?", 15)
+    libro_arquitectura.crear_y_agregar_capitulo("Un cuento de dos valores", 20)
+
+    # 2. Demostración de Agregación
+    biblioteca_central = Biblioteca("Biblioteca Central IT")
+    biblioteca_central.agregar_libro(libro_arquitectura) # Se inyecta el objeto existente
+    
+    biblioteca_central.mostrar_catalogo()
+
+    # 3. Demostración de Colaboración
+    lector_uno = Lector("Ana")
+    lector_uno.leer_libro(libro_arquitectura) # Interacción mediante paso de mensajes
