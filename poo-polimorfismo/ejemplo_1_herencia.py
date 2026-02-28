@@ -26,11 +26,15 @@ class Cerdo(Animal):
 class Vaca(Animal):
     def hacer_sonido(self) -> str:
         return f"{self.nombre} dice: !Muu muu!"
+
+class Pato(Animal):
+    def hacer_sonido(self) -> str:
+        return f"{self.nombre} dice: !Cuac cuac!"
     
 # Funcion que puede trabajar con multiples objetos( estos objetos son este caso Gato y Perro)
 def hacer_sonar_animales(animales: List[Animal]) -> None:
     print("=" * 60)
-    print("🎶Concierto de Animales - Polimorfismo en Acción")
+    print("🎶 Concierto de Animales - Polimorfismo en Acción ")
     for animal in animales:
         # Aqui ocurre el polimorfismo
         # Misma llamada animal.hacer_sonido(), pero cada objeto
@@ -43,8 +47,8 @@ def demostrar_polimorfismo_con_tipos() -> None:
     mi_gato = Gato("Benito")
     mi_vaca = Vaca("Lola")
     mi_cerdo = Cerdo("Porky")
-
-    granja: List[Animal] = [mi_perro, mi_gato, mi_vaca, mi_cerdo]
+    mi_pato = Pato("Donald")
+    granja: List[Animal] = [mi_perro, mi_gato, mi_vaca, mi_cerdo, mi_pato]
     hacer_sonar_animales(granja)
 
 if __name__ == "__main__":
