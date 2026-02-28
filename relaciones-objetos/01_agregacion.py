@@ -28,3 +28,6 @@ print(cr7.nombre) # El jugador sigue existiendo a pesar de que el club ha sido
 
 del barcelona # Destruimos el club, pero el jugador sigue existiendo
 print(messi.nombre) # El jugador sigue existiendo a pesar de que el club ha sido
+
+
+print(barcelona.jugadores) # El club ya no existe, por lo que no se puede acceder a sus jugadores
