@@ -47,3 +47,21 @@ class Biblioteca:
         print("Libros en la biblioteca:")
         for libro in self.libros:
             print(libro.get_titulo())
+
+
+"""
+Relacion agregacion:
+"""
+
+class Estante:
+    def __init__(self) -> None:
+        self.libros: List[Libro] = [] # La lista de libros nace vacia
+
+    def agregar_libro(self, libro: Libro) -> None:
+        # el estante recibe un libro que YA EXISTE de forma independiente, es aqui donde se establece la relacion de composicion entre el estante y el libro
+        self.libros.append(libro)
+
+    def mostrar_libros(self) -> None:
+        print("Libros en el estante:")
+        for libro in self.libros:
+            print(libro.get_titulo())
