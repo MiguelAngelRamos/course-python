@@ -5,9 +5,11 @@ Dada la clase base Empleado, tu tarea es modelar el equipo de una empresa tecnol
 
 Implementa las siguientes clases:
 
-Gerente(Empleado) — Además del nombre y salario base, un gerente tiene un bono (float). Al obtener sus detalles de pago, debe mostrar la información del padre más el bono aplicado al salario: salario_total = salario_base + bono.
+Gerente(Empleado) — Además del nombre y salario base, un gerente tiene un bono (float). Al obtener sus detalles de pago, debe mostrar la información 
+del padre más el bono aplicado al salario: salario_total = salario_base + bono.
 
-Diseñador(Empleado) — Además del nombre y salario base, un diseñador tiene una herramienta principal (ej: "Figma", "Photoshop"). Sus detalles de pago deben incluir la herramienta que domina.
+Diseñador(Empleado) — Además del nombre y salario base, un diseñador tiene
+una herramienta principal (ej: "Figma", "Photoshop"). Sus detalles de pago deben incluir la herramienta que domina.
 
 Requisitos:
 
